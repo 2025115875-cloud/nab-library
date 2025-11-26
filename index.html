@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAB Library Portal</title>
+
+    <!-- CSS LINK (required) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="top-header">
+        <div class="logo">
+            <h2>NAB LIBRARY</h2>
+        </div>
+
+        <nav class="main-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="eresources.html">E-Resources</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Welcome to NAB Library Portal</h1>
+        <p>Your gateway to knowledge, information, and digital resources.</p>
+    </section>
+
+<!-- Search Section -->
+<section class="search-section">
+    <form action="https://www.google.com/search" method="get" target="_blank">
+        <input type="text" name="q" placeholder="Search NAB Library..." class="search-input">
+        <button type="submit" class="search-button">Search</button>
+    </form>
+</section>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="ql-box">
+            <h3>Library Catalog</h3>
+            <p>Search books, journals, and media resources.</p>
+            <a href="#">Explore</a>
+        </div>
+
+        <div class="ql-box">
+            <h3>E-Resources</h3>
+            <p>Access online databases, e-books, and journals.</p>
+            <a href="#">Open</a>
+        </div>
+
+        <div class="ql-box">
+            <h3>Library Services</h3>
+            <p>Borrowing, referencing, study rooms & more.</p>
+            <a href="#">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Announcements Slider -->
+<section class="announcements card">
+  <h2>Latest Announcements</h2>
+  <div class="slider">
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <div class="slides">
+      <img src="images/announcement1.jpg" alt="Announcement 1">
+      <img src="images/announcement2.jpg" alt="Announcement 2">
+      <img src="images/announcement3.jpg" alt="Announcement 3">
+    </div>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+</section>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slides img');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => slide.style.display = i === index ? 'block' : 'none');
+}
+
+function changeSlide(n) {
+  currentSlide += n;
+  if(currentSlide < 0) currentSlide = slides.length - 1;
+  if(currentSlide >= slides.length) currentSlide = 0;
+  showSlide(currentSlide);
+}
+
+// Initialize
+showSlide(currentSlide);
+</script>
+<!-- Meet Our Librarians -->
+<section class="librarians card">
+  <h2>Meet Our Librarians</h2>
+  <div class="librarian-container">
+    
+    <div class="librarian-profile">
+      <img src="images/librarian1.jpg" alt="Librarian 1">
+      <div class="librarian-info">
+        <h3>Ms. Nor Ain Batrisyia</h3>
+        <p>Head Librarian with over 10 years of experience managing academic resources and supporting student research.</p>
+      </div>
+    </div>
+
+    <div class="librarian-profile">
+      <img src="images/librarian2.jpg" alt="Librarian 2">
+      <div class="librarian-info">
+        <h3>Mr. Ahmad Faiz</h3>
+        <p>Specialist in digital resources and database management for academic research.</p>
+      </div>
+    </div>
+
+    <div class="librarian-profile">
+      <img src="images/librarian3.jpg" alt="Librarian 3">
+      <div class="librarian-info">
+        <h3>Ms. Siti Mariam</h3>
+        <p>Reference librarian focusing on student guidance and information literacy programs.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>NAB Library | Prototype for Academic Project</p>
+        <p>Email: info@nablibrary.com | Phone: 012-345 6789</p>
+        
+    </footer>
+    
+<!-- Circular Chatbot -->
+<div id="chatbot-circle">
+    💬
+</div>
+
+<div id="chatbot-window">
+    <div id="chatbot-header">Chat with NAB Library</div>
+    <div id="chatbot-messages"></div>
+    <input type="text" id="chatbot-input" placeholder="Type a message..." />
+</div>
+
+<style>
+/* Chat Circle Button */
+#chatbot-circle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #003366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+/* Chat Window (hidden by default) */
+#chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 250px;
+    max-width: 90%;
+    height: 300px;
+    background-color: #004d99;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 1000;
+}
+
+/* Header */
+#chatbot-header {
+    background-color: #003366;
+    color: white;
+    padding: 8px 10px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+/* Messages area */
+#chatbot-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Message bubbles */
+.message {
+    padding: 6px 10px;
+    border-radius: 15px;
+    max-width: 85%;
+    word-wrap: break-word;
+    font-size: 0.85rem;
+}
+
+.user {
+    background-color: #ffeb3b;
+    color: #003366;
+    align-self: flex-end;
+}
+
+.bot {
+    background-color: #0066cc;
+    color: white;
+    align-self: flex-start;
+}
+
+/* Input box */
+#chatbot-input {
+    width: calc(100% - 20px);
+    padding: 6px 10px;
+    margin: 0 10px 10px 10px;
+    border: 1px solid #003366;
+    border-radius: 5px;
+    outline: none;
+    font-size: 0.85rem;
+}
+</style>
+
+<script>
+const chatCircle = document.getElementById('chatbot-circle');
+const chatWindow = document.getElementById('chatbot-window');
+const messages = document.getElementById('chatbot-messages');
+const input = document.getElementById('chatbot-input');
+
+// Toggle chat window
+chatCircle.onclick = () => {
+    chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+    chatWindow.style.flexDirection = 'column';
+};
+
+// Handle user input
+input.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && input.value.trim() !== '') {
+        // User message
+        const userMsg = document.createElement('div');
+        userMsg.classList.add('message', 'user');
+        userMsg.textContent = input.value;
+        messages.appendChild(userMsg);
+
+        // Bot response
+        const botMsg = document.createElement('div');
+        botMsg.classList.add('message', 'bot');
+        botMsg.textContent = "Thank you! We'll get back to you soon.";
+        messages.appendChild(botMsg);
+
+        // Scroll to bottom
+        messages.scrollTop = messages.scrollHeight;
+
+        // Clear input
+        input.value = '';
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - NAB Library</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Header (same as index) -->
+<header class="top-header">
+    <div class="logo">
+        <h2>NAB LIBRARY</h2>
+    </div>
+
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="eresources.html">E-Resources</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header card">
+    <h1>Contact Us</h1>
+    <p>Reach out for inquiries, assistance, or support.</p>
+</section>
+
+<div class="card">
+    <h2>Send Us a Message</h2>
+    <p>Have questions? Fill in the form below and our librarian will respond soon.</p>
+
+    <form action="https://formsubmit.co/norainbatrisyia03@gmail.com" method="POST">
+
+        <!-- Disable Captcha -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Redirect after submit -->
+        <input type="hidden" name="_next" value="https://2025115875-cloud.github.io/thank-you/">
+
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <label>Your Message</label>
+        <textarea name="message" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit" class="btn">Submit Message</button>
+    </form>
+</div>
+
+<!-- Contact Info -->
+<section class="card">
+    <h2>Library Contact Information</h2>
+    <p>Email: info@nablibrary.com</p>
+    <p>Phone: 012-345 6789</p>
+    <p>Address: UiTM Puncak Perdana, Selangor</p>
+</section>
+
+<!-- Map -->
+<section class="card">
+    <h2>Locate Us</h2>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps?q=uitm+puncak+perdana&output=embed"
+            width="100%" height="300" style="border:0;" loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>NAB Library | Prototype for Academic Project</p>
+</footer>
+
+</body>
+</html>
